@@ -1,5 +1,12 @@
 # Modules
 
+- Monolithic app architecture - all milliions of lines code in single app code file [difficult to debug, maintain, change/updtae/upgrade, test(not a part but everytime entire app has to be tested)]
+  Same is with a terraform project - means to create infra for abc dev team which includes ec2, vpc, s3, cw, ecs, lambda, api gateway etc. and if creating it with a single tf project, it'll become monolithic and would be difficult to manage it. (Hence, tf modules come into picture)
+
+- Microservices app architecture - to overcome challenges of monolithic
+  This microservices concept in terraform is called MODULAR Approach.
+
+- Advantages of using Terraform:
 The advantage of using Terraform modules in your infrastructure as code (IaC) projects lies in improved organization, reusability, and maintainability. Here are the key benefits:
 
 1. **Modularity**: Terraform modules allow you to break down your infrastructure configuration into smaller, self-contained components. This modularity makes it easier to manage and reason about your infrastructure because each module handles a specific piece of functionality, such as an EC2 instance, a database, or a network configuration.
