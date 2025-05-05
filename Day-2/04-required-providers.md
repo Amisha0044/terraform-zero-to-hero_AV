@@ -17,7 +17,7 @@ terraform {
 }
 ```
 
-QUESTION:
+##### QUESTION:
 what is the difference between below two provider.tf file-
 
 provider "aws" {
@@ -39,7 +39,7 @@ provider "aws" {
 region = "us-east-1"
 }
 
-ANSWER:
+###### ANSWER:
 Great question! Both Terraform snippets you're referring to are valid, but there's a **key difference** in purpose and **best practice** between the two.
 
 ## 🔍 Breakdown of Each Version
