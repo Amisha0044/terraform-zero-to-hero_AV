@@ -14,6 +14,7 @@
 - Codespaces will provide you a virtual machine with Ubuntu and VS Code by default.
 - [codespace -- search bar -- > dev -- select "add dev container config files" -- sleect "modify your active config" -- search for "terraform" and "aws" -- select and "OK --- now, again search for "> rebuild" instead of > dev -- select "rebuild container"]
 - EC2 instance in free tier may not work as it has only 1vcpu and 1gb ram in t2.miscro (free tier) which may not support installing vscode, terraform and all.
+- Good to have/install plugins: Hashicorp Terraform, Hashicorp HCL
 - Follow the steps provided in the Downloads [Page](https://developer.hashicorp.com/terraform/downloads) for Linux.
 
 ## Linux
