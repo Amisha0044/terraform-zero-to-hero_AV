@@ -27,3 +27,7 @@ The advantage of using Terraform modules in your infrastructure as code (IaC) pr
 8. **Scalability**: As your infrastructure grows, modules provide a scalable approach to managing complexity. You can continue to create new modules for different components of your architecture, maintaining a clean and organized codebase.
 
 9. **Security and Compliance**: Modules can encapsulate security and compliance best practices. For instance, you can create a module for launching EC2 instances with predefined security groups, IAM roles, and other security-related configurations, ensuring consistency and compliance across your deployments.
+
+
+### Publicly avaialable modules: 
+Search for "terroform registry" and from terraform registry you can use publicly available modules (not used in org due to security and compliance issues, so not recommended for org so they create their own modules)
