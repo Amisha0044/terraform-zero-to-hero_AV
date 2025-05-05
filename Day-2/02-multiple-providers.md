@@ -1,3 +1,9 @@
+# Terraform Providers
+1) Official - backed(created, managed and maintained) by Hashicorp - AWS, Azure, GCP, Kubernetes
+2) Partner - created, managed and maintained by the provider itself to allow infra creation/mgmt using terraform - Alibaba Cloud, Oracle Cloud Infrastructure
+3) Community - created, managed and maintained by anyone like you in open-source way
+
+
 # Multiple Providers
 
 You can use multiple providers in one single terraform project. For example,
