@@ -4,7 +4,7 @@
 - Same is with a terraform project - means to create infra for abc dev team which includes ec2, vpc, s3, cw, ecs, lambda, api gateway etc. and if creating it with a single tf project, it'll become monolithic and would be difficult to manage it. (Hence, tf modules come into picture)
 
 - Microservices app architecture - to overcome challenges of monolithic
-- This microservices concept in terraform is called MODULAR Approach.
+- This microservices concept in terraform is called MODULAR Approach. Ex. create tf modules of each component/resource like for ec2, s3, lambda etc to enhance reusability and maintainability of components.
 
 - Advantages of using Terraform:
 
