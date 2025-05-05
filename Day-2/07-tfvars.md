@@ -28,4 +28,12 @@ Here's how you typically use `.tfvars` files
 terraform apply -var-file=dev.tfvars
 ```
 
+
+# Terraform Project Structure in Organizations
+- providers.tf
+- input.tf
+- output.tf
+- main.tf
+- terraform.tfvars (imp) [only file to be changed for changing the values/parameterizing]
+
 By using `.tfvars` files, you can keep your Terraform code more generic and flexible while tailoring configurations to different scenarios and environments.
