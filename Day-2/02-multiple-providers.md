@@ -1,4 +1,5 @@
 # Terraform Providers
+Providers are a logical abstraction of an upstream API. They are responsible for understanding API interactions and exposing resources.
 1) Official - backed(created, managed and maintained) by Hashicorp - AWS, Azure, GCP, Kubernetes
 2) Partner - created, managed and maintained by the provider itself to allow infra creation/mgmt using terraform - Alibaba Cloud, Oracle Cloud Infrastructure
 3) Community - created, managed and maintained by anyone like you in open-source way
