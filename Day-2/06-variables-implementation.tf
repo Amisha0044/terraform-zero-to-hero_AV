@@ -2,7 +2,7 @@
 
 ```hcl
 
-# Define an input variable for the EC2 instance type
+# Define an input variable for the EC2 instance type - telling terraform to take this value (ex. me to terraform)
 variable "instance_type" {
   description = "EC2 instance type"
   type        = string
@@ -26,7 +26,7 @@ resource "aws_instance" "example_instance" {
   instance_type = var.instance_type
 }
 
-# Define an output variable to expose the public IP address of the EC2 instance
+# Define an output variable to expose the public IP address of the EC2 instance - telling terraform to give me this value (ex. terraform to me)
 output "public_ip" {
   description = "Public IP address of the EC2 instance"
   value       = aws_instance.example_instance.public_ip
