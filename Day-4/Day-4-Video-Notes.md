@@ -11,3 +11,70 @@
 - Solution to above drawbacks are using remote backend (S3) to host/store the state file.
 - When we run terraform init, it checks terraform configurations like provider, region, version and remote backend and understands that remote backend is setup as S3 so state file is on mentioned S3. Hence, whenever terraform apply command is executed, it automatically updates the state file stored in S3 remote backend.
 - So, the devops team haviing a github repo for terraform projects, will clone the github repo in their local, change the logic, execute terraform apply (and terraform automaticlaly updates the state file in S3 bucket), and push code from local to github repo again (with pull request).
+
+###
+- terraform show 
+  --> this command is used to display the current Terraform state in a human-readable format.
+  --> ✅ What it does:
+         o It reads the current state from terraform.tfstate (by default).
+         o Displays all resources, their attributes, and values managed by Terraform.
+  --> ✅ Useful Options:
+         o terraform show -json: Outputs the state in JSON format (for scripting, automation, or tools).
+         o terraform show path/to/terraform.tfstate: Show a specific state file.
+        
+- terraform init
+  --> this command is the first command you run when starting a new Terraform project. It initializes your working directory for Terraform use.
+  --> ✅ What terraform init does:
+         o Downloads the provider plugins (e.g., AWS, Azure, etc.)
+         o Initializes the backend (for storing state remotely, if configured)
+         o Sets up .terraform/ directory
+         o Validates the configuration structure
+        You must run this inside a directory that contains Terraform configuration files (.tf files).
+  --> ✅ Syntax:  terraform plan
+  --> ✅ Sample Output:
+            Initializing the backend...
+            Initializing provider plugins...
+            - Finding latest version of hashicorp/aws...
+            - Installing hashicorp/aws v5.0.0...
+            - Installed hashicorp/aws v5.0.0 (signed by HashiCorp)
+            Terraform has been successfully initialized!
+  --> ✅ When to run it:
+         o First time in a new Terraform project
+         o After adding or updating providers in .tf files
+         o After cloning someone else's Terraform repo
+  --> After running this command, it creates .terraform/ and .terraform.lock.hcl hidden folder and file respectively.
+
+- terraform plan 
+  --> this command is used to preview the changes Terraform will make to your infrastructure before actually applying them.
+  --> ✅ Purpose:
+         o It shows what will be:  Added, Changed and Destroyed
+         o This helps you review and verify what Terraform will do, without making any real changes yet.
+  --> ✅ Syntax:  terraform plan
+  --> ✅ Optional:  terraform plan -out=tfplan  # Save the plan to a file
+          Later you can apply it with:  terraform apply tfplan
+  --> ✅ Example Output:
+            Terraform will perform the following actions:
+            # aws_instance.example will be created
+            + resource "aws_instance" "example" {
+                + ami           = "ami-0c55b159cbfafe1f0"
+                + instance_type = "t2.micro"
+                + tags          = {
+                    + "Name" = "example"
+                    }
+                }
+            Plan: 1 to add, 0 to change, 0 to destroy.
+  --> ✅ When to run:
+        o After editing .tf files to check your changes
+        o Before terraform apply to avoid surprises
+
+- terraform apply
+  --> this command is used to execute the changes required to reach the desired infrastructure state defined in your .tf files.
+  --> ✅ What it does:
+        o Plans the changes (like terraform plan)
+        o Prompts for confirmation
+        o Applies the changes to your cloud provider (e.g., AWS, Azure, GCP)
+  --> ✅ Syntax:  terraform apply
+  --> ✅ Optional (auto-approve, skip prompt):  terraform apply -auto-approve
+  --> ✅ After Running thie command:
+        o It will create the file named terraform.tfstate, and save the state in this file
+        o You can then inspect with terraform show
